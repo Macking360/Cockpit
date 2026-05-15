@@ -1,0 +1,134 @@
+{
+  "result": "workers-cockpit-snapshot",
+  "snapshot_version": "operator_c2_cockpit_static_v0",
+  "generated_at": "2026-05-15T00:00:00Z",
+  "local_paths_included": false,
+  "cockpit": {
+    "status": "healthy_idle",
+    "main_sync_status": "blocked",
+    "blocked_reasons": [
+      "no_ready_worker_lane"
+    ],
+    "next_safe_action": "Wait for an ARES or PRES issue, then run the appropriate worker watcher from the approved runner checkout.",
+    "host_side_validation_required": true,
+    "labels_ok": true,
+    "slack": {
+      "enabled": true,
+      "mode": "slack_webhook",
+      "security_boundary": "Outbound summary only; no secrets or private client data."
+    },
+    "github": {
+      "reachable": true,
+      "label_health": "ok"
+    },
+    "workers": {
+      "acer": {
+        "worker_id": "acer",
+        "display_name": "Acer",
+        "ready_labels": [
+          "acer-ready",
+          "ARES"
+        ],
+        "branch_prefix": "acer/",
+        "readiness": "idle",
+        "runner_checkout_approved": true,
+        "runner_checkout_reason": "approved_runner_checkout",
+        "runner_contamination_reason": null,
+        "blocked_reason": null,
+        "current_branch": "main",
+        "working_tree_status": "clean",
+        "ready_issue_numbers": [],
+        "ready_issue_count": 0,
+        "active_lock": false,
+        "stale_lock_count": 0,
+        "open_pr_count": 0,
+        "blocked_job_count": 0,
+        "needs_human_approval_count": 0,
+        "tests_failed_count": 0,
+        "lease_state": "no_job",
+        "lease_classification": "none",
+        "heartbeat_at": null,
+        "lease_expires_at": null,
+        "executor_mode": "packet_only",
+        "slack_configured": true,
+        "github_reachable": true
+      },
+      "probook": {
+        "worker_id": "probook",
+        "display_name": "ProBook",
+        "ready_labels": [
+          "probook-ready",
+          "PRES"
+        ],
+        "branch_prefix": "probook/",
+        "readiness": "runner_blocked",
+        "runner_checkout_approved": false,
+        "runner_checkout_reason": "commissioning_required",
+        "runner_contamination_reason": null,
+        "blocked_reason": "runner_not_commissioned_on_current_main",
+        "current_branch": "main",
+        "working_tree_status": "unknown",
+        "ready_issue_numbers": [],
+        "ready_issue_count": 0,
+        "active_lock": false,
+        "stale_lock_count": 0,
+        "open_pr_count": 0,
+        "blocked_job_count": 2,
+        "needs_human_approval_count": 1,
+        "tests_failed_count": 0,
+        "lease_state": "no_job",
+        "lease_classification": "none",
+        "heartbeat_at": null,
+        "lease_expires_at": null,
+        "executor_mode": "packet_only",
+        "slack_configured": true,
+        "github_reachable": true
+      }
+    },
+    "metrics": {
+      "ready_issue_count": 0,
+      "active_worker_count": 0,
+      "stale_lock_count": 0,
+      "open_pr_count": 0,
+      "blocked_job_count": 2,
+      "needs_human_approval_count": 1,
+      "tests_failed_count": 0
+    },
+    "operator_attention": [
+      {
+        "severity": "info",
+        "reason": "no_ready_worker_lane"
+      },
+      {
+        "severity": "attention",
+        "reason": "probook_commissioning_required",
+        "worker_id": "probook"
+      }
+    ],
+    "trend_slots": [
+      {
+        "name": "claim-to-completion time",
+        "status": "history_not_enabled",
+        "description": "Can be populated later from completion packet timestamps."
+      },
+      {
+        "name": "stale lease count",
+        "status": "live_snapshot_only",
+        "description": "Current snapshot reports stale locks; historical trend storage is intentionally deferred."
+      },
+      {
+        "name": "infrastructure vs product work mix",
+        "status": "needs_issue_taxonomy",
+        "description": "Useful once issue templates consistently tag reliability, product, docs, and review work."
+      }
+    ],
+    "boundary": {
+      "read_only": true,
+      "redacted_snapshot": true,
+      "no_secrets": true,
+      "no_private_client_data": true,
+      "no_worker_claims": true,
+      "no_runtime_behavior_change": true
+    }
+  }
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>360 Operator C2 Cockpit</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="scanline" aria-hidden="true"></div>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">360 Command Centre</p>
+          <h1>Operator C2 Cockpit</h1>
+          <p class="hero-copy">
+            Read-only visibility for Acer and ProBook worker readiness, queue hygiene, leases, and operating boundaries.
+          </p>
+        </div>
+        <section class="status-beacon" aria-label="Cockpit status">
+          <span id="status-dot" class="status-dot"></span>
+          <div>
+            <span class="label">System Posture</span>
+            <strong id="system-status">loading</strong>
+          </div>
+        </section>
+      </header>
+
+      <section class="meta-grid" aria-label="Snapshot metadata">
+        <article class="meta-card">
+          <span class="label">Snapshot</span>
+          <strong id="snapshot-time">loading</strong>
+        </article>
+        <article class="meta-card">
+          <span class="label">GitHub</span>
+          <strong id="github-state">checking</strong>
+        </article>
+        <article class="meta-card">
+          <span class="label">Slack</span>
+          <strong id="slack-state">checking</strong>
+        </article>
+        <article class="meta-card">
+          <span class="label">Host Side Validation</span>
+          <strong id="host-side-state">checking</strong>
+        </article>
+      </section>
+
+      <section class="command-band">
+        <div>
+          <span class="label">Next Safe Action</span>
+          <p id="next-safe-action">Loading worker doctrine...</p>
+        </div>
+      </section>
+
+      <section class="layout">
+        <div class="panel wide">
+          <div class="panel-heading">
+            <span class="label">Worker Readiness Board</span>
+            <strong>Acer / ProBook</strong>
+          </div>
+          <div id="worker-board" class="worker-board"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <span class="label">Queue Map</span>
+            <strong>Current Load</strong>
+          </div>
+          <div id="metrics-grid" class="metrics-grid"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <span class="label">Operator Attention</span>
+            <strong>Blockers</strong>
+          </div>
+          <div id="attention-list" class="attention-list"></div>
+        </div>
+
+        <div class="panel wide">
+          <div class="panel-heading">
+            <span class="label">Reliability Trends</span>
+            <strong>Next Instrumentation</strong>
+          </div>
+          <div id="trend-slots" class="trend-slots"></div>
+        </div>
+
+        <div class="panel wide boundary-panel">
+          <div class="panel-heading">
+            <span class="label">Boundary Lock</span>
+            <strong>Read Only</strong>
+          </div>
+          <div id="boundary-grid" class="boundary-grid"></div>
+        </div>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
